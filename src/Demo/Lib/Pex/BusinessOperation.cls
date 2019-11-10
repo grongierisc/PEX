@@ -1,4 +1,4 @@
-Class Demo.Lib.Pex.BusinessOperation Extends (Ens.BusinessOperation, Demo.Lib.Pex.Common) [ Inheritance = right, ProcedureBlock, System = 4 ]
+Class Demo.Lib.Pex.BusinessOperation Extends (Ens.BusinessOperation, Demo.Lib.Pex.Common)
 {
 
 Parameter SETTINGS = "%remoteClassname:Remote BusinessOperation,%remoteSettings:Remote BusinessOperation,%gatewayHost:Remote BusinessOperation,%gatewayPort:Remote BusinessOperation,%gatewayTimeout:Remote BusinessOperation,%gatewayExtraClasspaths:Remote BusinessOperation";
