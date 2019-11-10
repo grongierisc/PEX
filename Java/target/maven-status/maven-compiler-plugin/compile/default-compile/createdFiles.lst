@@ -1,0 +1,9 @@
+com/intersystems/demo/pex/SimpleObject.class
+com/intersystems/demo/pex/BusinessService.class
+com/intersystems/demo/pex/InboundAdapter.class
+com/intersystems/demo/pex/BusinessOperation.class
+com/intersystems/demo/pex/Request.class
+com/intersystems/demo/pex/NonPollingBusinessService.class
+com/intersystems/demo/pex/OutboundAdapter.class
+com/intersystems/demo/pex/BusinessProcess.class
+com/intersystems/demo/pex/Response.class

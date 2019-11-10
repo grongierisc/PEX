@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Export generator="IRIS" version="26">
+<Class name="Demo.PEX.BusinessOperation">
+<Super>Ens.BusinessOperation</Super>
+<TimeCreated>65031,42338.534532</TimeCreated>
+
+<Parameter name="ADAPTER">
+<Default>EnsLib.PEX.OutboundAdapter</Default>
+</Parameter>
+
+<Method name="OnMessage">
+<FormalSpec>pRequest:EnsLib.PEX.Message,*pResponse:EnsLib.PEX.Message</FormalSpec>
+<ReturnType>%Status</ReturnType>
+<Implementation><![CDATA[
+	set tSC = $$$OK
+	try {
+		if $$$EnsJobStatus($$$SystemName,$job,$$$eJobForeground) {
+			set io = $io use $p
+			write !,"[IRIS] Demo.PEX.BusinessOperation:OnMessage() is called"
+			use io
+		}
+		set string = ##class(Ens.StringContainer).%New(pRequest.requestString)
+		set responseString = ..Adapter.printStringContainer(string)
+	} catch ex {
+		set tSC = ex.AsStatus()
+	}
+	quit tSC
+]]></Implementation>
+</Method>
+</Class>
+</Export>

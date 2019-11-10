@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Export generator="IRIS" version="26">
+<Class name="Demo.PEX.TickerService">
+<Super>Ens.BusinessService</Super>
+<TimeCreated>65028,41923.206443</TimeCreated>
+
+<Parameter name="ADAPTER">
+<Default>Ens.InboundAdapter</Default>
+</Parameter>
+
+<Parameter name="SETTINGS">
+<Default>TargetConfigName,RemoteMessagePackageName</Default>
+</Parameter>
+
+<Property name="TargetConfigName">
+<Type>%String</Type>
+</Property>
+
+<Property name="RemoteMessagePackageName">
+<Type>%String</Type>
+</Property>
+
+<Method name="OnProcessInput">
+<FormalSpec><![CDATA[pInput:%RegisteredObject,*pOutput:%RegisteredObject,&pHint:%String]]></FormalSpec>
+<ReturnType>%Status</ReturnType>
+<Implementation><![CDATA[
+	try {
+		set request = ##class(EnsLib.PEX.Message).%New(..RemoteMessagePackageName_".Request")
+		set request.requestString = $tr($p($zdt($zu(188),3,,3)," ",2),":")
+		set tSC = ..SendRequestAsync(..TargetConfigName,request) quit:$$$ISERR(tSC)
+		set ..%WaitForNextCallInterval=1
+	} catch ex {
+		set tSC = ex.AsStatus()
+	}
+	quit tSC
+]]></Implementation>
+</Method>
+</Class>
+</Export>

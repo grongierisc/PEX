@@ -1,0 +1,9 @@
+{
+    "objectscript.conn.active": true,
+    "objectscript.conn.ns": "PEX",
+    "objectscript.conn.password": "password",
+    "objectscript.conn.port": 52770,
+    "objectscript.conn.username": "SuperUser",
+    "objectscript.autoPreviewXML": true,
+    "java.dependency.syncWithFolderExplorer": false
+}

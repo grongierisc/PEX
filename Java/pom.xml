@@ -1,0 +1,24 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.intersystems</groupId>
+	<artifactId>intersystems-PEX-demo</artifactId>
+	<version>1.0.0</version>
+	<name>InterSystems PEX Demo</name>
+	<packaging>jar</packaging>
+	<dependencies>
+		<dependency>
+			<groupId>com.intersystems</groupId>
+			<artifactId>intersystems-jdbc</artifactId>
+			<version>3.0.0</version>
+			<scope>system</scope>
+      		<systemPath>${project.basedir}/lib/intersystems-jdbc-3.0.0.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>com.intersystems</groupId>
+			<artifactId>intersystems-gateway</artifactId>
+			<version>3.0.0</version>
+			<scope>system</scope>
+      		<systemPath>${project.basedir}/lib/intersystems-gateway-3.0.0.jar</systemPath>
+		</dependency>
+	</dependencies>
+</project>

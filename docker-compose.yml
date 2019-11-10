@@ -1,0 +1,20 @@
+# Docker Compose IRIS for Contrast & Care V3
+# Docker For windows with persistent Data on docker volume (docker volume CCDATA)
+version: "3.3"
+
+volumes:
+  CCDATA:
+
+services:
+  IRISHEALTH:
+    container_name: PEX
+    build:
+      context: .
+      args:
+        IRIS_PASSWORD: password
+    image: pex:latest
+    hostname: PEX
+    volumes:
+      - "./Java:/mnt/PEX"
+    ports:
+    - "52770:52773" # 51773 is the superserver default port
