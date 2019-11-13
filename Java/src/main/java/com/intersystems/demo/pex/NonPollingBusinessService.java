@@ -13,7 +13,7 @@ public class NonPollingBusinessService {
 	public static void main(String[] args) {
 		
 		try {
-			IRISConnection connection = JavaGateway.getConnection("jdbc:IRIS://localhost:51774/ENSEMBLE/","_SYSTEM","SYS");
+			IRISConnection connection = JavaGateway.getConnection("jdbc:IRIS://localhost:51770/PEX/","SuperUser","password");
 			com.intersystems.enslib.pex.BusinessService service = Director.CreateBusinessService(connection,"Demo.PEX.NonPollingBusinessService");
 			String response = (String) service.ProcessInput(String.join(" ", args));
 			System.out.println("\r\n" + response);

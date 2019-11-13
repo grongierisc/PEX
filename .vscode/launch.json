@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - NonPollingBusinessService",
+            "request": "launch",
+            "mainClass": "com.intersystems.demo.pex.NonPollingBusinessService",
+            "projectName": "intersystems-PEX-demo"
+        }
+    ]
+}

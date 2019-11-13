@@ -14,6 +14,7 @@ Method OnProcessInput(pInput As %RegisteredObject, Output pOutput As %Registered
 	try {
 		set request = ##class(Demo.Lib.Pex.Message).%New(..RemoteMessagePackageName_".Request")
 		set request.requestString = $tr($p($zdt($zu(188),3,,3)," ",2),":")
+		set request.requestInteger = $Random(100)
 		set tSC = ..SendRequestSync(..TargetConfigName,request,.response) quit:$$$ISERR(tSC)
 		set ..%WaitForNextCallInterval=1
 	} catch ex {
