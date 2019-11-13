@@ -5,6 +5,7 @@
     "objectscript.conn.port": 52770,
     "objectscript.conn.username": "SuperUser",
     "objectscript.autoPreviewXML": true,
-    "java.dependency.syncWithFolderExplorer": false,
-    "java.configuration.updateBuildConfiguration": "interactive"
+    "java.dependency.syncWithFolderExplorer": true,
+    "java.configuration.updateBuildConfiguration": "interactive",
+    "java.dependency.packagePresentation": "hierarchical"
 }

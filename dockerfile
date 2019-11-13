@@ -1,4 +1,4 @@
-FROM store/intersystems/irishealth-community:2019.4.0.379.0 as needs-squashing
+FROM store/intersystems/irishealth-community:2019.4.0.379.0
 LABEL maintainer="Guillaume Rongier <guillaume.rongier@intersystems.com>"
 
 ARG IRIS_PASSWORD

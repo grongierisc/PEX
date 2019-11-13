@@ -4,10 +4,6 @@ import com.intersystems.gateway.JavaGateway;
 import com.intersystems.jdbc.IRISConnection;
 import com.intersystems.enslib.pex.Director;
 
-import java.time.LocalTime;
-
-import com.intersystems.enslib.pex.BusinessService;
-
 public class NonPollingBusinessService {
 
 	public static void main(String[] args) {

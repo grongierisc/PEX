@@ -27,9 +27,10 @@ XData ProductionDefinition
   <Item Name="Demo.PEX.Service" Category="" ClassName="Demo.PEX.Service" PoolSize="1" Enabled="true" Foreground="false" Comment="" LogTraceEvents="false" Schedule="">
     <Setting Target="Host" Name="TargetConfigName">Demo.PEX.BP.BusinessProcess</Setting>
   </Item>
-  <Item Name="com.intersystems.enslib.pex.BusinessService" Category="" ClassName="Demo.Lib.Pex.BusinessService" PoolSize="1" Enabled="true" Foreground="false" Comment="" LogTraceEvents="false" Schedule="">
+  <Item Name="com.intersystems.demo.pex.BusinessService" Category="" ClassName="Demo.Lib.Pex.BusinessService" PoolSize="1" Enabled="true" Foreground="false" Comment="" LogTraceEvents="false" Schedule="">
     <Setting Target="Host" Name="%remoteClassname">com.intersystems.demo.pex.BusinessService</Setting>
     <Setting Target="Host" Name="%gatewayExtraClasspaths">/mnt/PEX/target/intersystems-PEX-demo-1.0.0.jar</Setting>
+    <Setting Target="Host" Name="%remoteSettings">Target=Demo.PEX.BP.BusinessProcess</Setting>
   </Item>
   <Item Name="Demo.PEX.BP.BusinessProcess" Category="" ClassName="Demo.PEX.BP.BusinessProcess" PoolSize="1" Enabled="true" Foreground="false" Comment="" LogTraceEvents="false" Schedule="">
   </Item>
