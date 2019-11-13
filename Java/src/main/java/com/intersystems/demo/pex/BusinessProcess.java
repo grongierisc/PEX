@@ -1,7 +1,6 @@
 package com.intersystems.demo.pex;
 
 import com.intersystems.enslib.pex.Persistent;
-import com.intersystems.jdbc.IRISObject;
 
 public class BusinessProcess extends com.intersystems.enslib.pex.BusinessProcess {
 	
@@ -20,18 +19,15 @@ public class BusinessProcess extends com.intersystems.enslib.pex.BusinessProcess
 	
 	public Object OnRequest(Object request) throws Exception {
 		for ( int i=0 ; i<4 ; i++ ) {
-			SendRequestAsync("Demo.PEX.RandomGenerator",(IRISObject)null,true,"request #"+(i+1));
+			Request tRequest = new Request("test");
+			tRequest.message = "test"+i;
+			SendRequestAsync("Demo.PEX.BP.BusinessProcess",tRequest);
 		}
-		SetTimer(7,"myTimer");
-		Reply(null);
 		return null;
 	}
 
 	public Object OnResponse(Object request, Object response, Object callRequest, Object callResponse, String pCompletionKey) throws Exception {
-		if ( pCompletionKey.equals("myTimer") ) {
-				return null;
-		}
-		runningTotal = runningTotal + Integer.parseInt(((Response)callResponse).responseString);
+		runningTotal = runningTotal + 1;
 		return null;
 	}
 
