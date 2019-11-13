@@ -17,4 +17,5 @@ services:
     volumes:
       - "./Java:/mnt/PEX"
     ports:
-    - "52770:52773" # 51773 is the superserver default port
+    - "52770:52773" # 51773 is the web default port
+    - "51770:51773" # 51773 is the superserver default port

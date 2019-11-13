@@ -4,24 +4,24 @@ import java.util.Random;
 
 public class BusinessOperation extends com.intersystems.enslib.pex.BusinessOperation {
 	
+	Random rand = new Random();
+
 	public void OnInit() throws Exception {
-		System.out.print("\r\n[Java] ...demo.pex.BusinessOperation:OnInit() is called");
+
 		return;
 	}
 
 	public void OnTearDown() throws Exception {
-		System.out.print("\r\n[Java] ...demo.pex.BusinessOperation:OnTearDown() is called");
+
 		return;
 	}
 	
 	public Object OnMessage(Object request) throws Exception {
-		System.out.print("\r\n[Java] ...demo.pex.BusinessOperation:OnMessage() is called with " + ((Request)request).requestString);
-		Response response = new Response("...demo.pex.BusinessOperation:OnMessage() echos " + ((Request)request).requestString);
 		
-		Random rand = new Random();
-		response.responseInteger = rand.nextInt(100);
-		LOGINFO(response.responseString);
-		
+		Response response = new Response("Java's echo " + ((Request)request).requestString,rand.nextInt(100));
+
+		LOGINFO("Java LOGINFO");
+
 
 		return response;
 	}

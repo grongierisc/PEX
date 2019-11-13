@@ -11,13 +11,14 @@ public class BusinessService extends com.intersystems.enslib.pex.BusinessService
 	}
 
 	public void OnTearDown() throws Exception {
-		System.out.print("\r\n[Java] ...demo.pex.BusinessService:OnTearDown() is called");
+
 		return;
 	}
 
 	public Object OnProcessInput(Object messageInput) throws Exception {
-		System.out.print("\r\n[Java] ...demo.pex.BusinessService:OnProcessInput() is called");
-		return "...demo.pex.BusinessService:OnProcessInput() echos";
+
+		Request request = new Request("test");
+		return SendRequestSync("Demo.PEX.BusinessOperation", request);
 	}
 
 }

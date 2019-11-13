@@ -20,5 +20,12 @@
 			<scope>system</scope>
       		<systemPath>${project.basedir}/lib/intersystems-gateway-3.0.0.jar</systemPath>
 		</dependency>
+		<dependency>
+			<groupId>com.google.gson</groupId>
+			<artifactId>gson</artifactId>
+			<version>2.8.5</version>
+			<scope>system</scope>
+      		<systemPath>${project.basedir}/lib/gson-2.8.5.jar</systemPath>
+		</dependency>
 	</dependencies>
 </project>

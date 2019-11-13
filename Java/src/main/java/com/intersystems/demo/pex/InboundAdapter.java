@@ -12,12 +12,10 @@ public class InboundAdapter extends com.intersystems.enslib.pex.InboundAdapter {
 	}
 
 	public void OnTearDown() throws Exception {
-		System.out.print("\r\n[Java] ...demo.pex.InboundAdapter:OnTearDown() is called");
 		return;
 	}
 
 	public void OnTask() throws Exception {
-		System.out.print("\r\n[Java] ...demo.pex.InboundAdapter:OnTask() is called");
 		// 50% chance of calling ProcessInput()
 		if ( Math.random()<0.5 ) {
 			SimpleObject request = new SimpleObject("message #"+(++runningCount));

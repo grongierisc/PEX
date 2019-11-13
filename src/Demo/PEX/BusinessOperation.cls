@@ -12,8 +12,11 @@ Method OnMessage(pRequest As EnsLib.PEX.Message, Output pResponse As EnsLib.PEX.
 			write !,"[IRIS] Demo.PEX.BusinessOperation:OnMessage() is called"
 			use io
 		}
-		set string = ##class(Ens.StringContainer).%New(pRequest.requestString)
+		set string = ##class(Ens.StringContainer).%New(pRequest.Message)
 		set responseString = ..Adapter.printStringContainer(string)
+		$$$LOGINFO(responseString)
+		set pResponse = ##class(Demo.Lib.Pex.Message).%New()
+		set pResponse.%jsonObject.javaMessage = responseString
 	} catch ex {
 		set tSC = ex.AsStatus()
 	}

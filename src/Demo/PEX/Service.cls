@@ -1,8 +1,6 @@
 Class Demo.PEX.Service Extends Ens.BusinessService
 {
 
-Parameter ADAPTER = "Ens.InboundAdapter";
-
 Parameter SETTINGS = "TargetConfigName";
 
 Property TargetConfigName As %String;
@@ -14,6 +12,10 @@ Method OnProcessInput(pInput As %RegisteredObject, Output pOutput As %Registered
 
 	try {
         $$$LOGINFO(pInput)
+		set tRequest = ##class(Demo.Lib.Pex.Message).%New()
+		set tRequest.%jsonObject.message = pInput
+		$$$ThrowOnError(..SendRequestSync(..TargetConfigName,tRequest,.tOuput))
+        set pOutput = "From Ensemble Service:"_pInput
 	} catch ex {
 		set tSC = ex.AsStatus()
 	}

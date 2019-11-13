@@ -1,5 +1,14 @@
 {
     "configurations": [
+        
+        {
+            "type": "java",
+            "name": "Debug (Launch) with Arguments Prompt",
+            "request": "launch",
+            "mainClass": "com.intersystems.demo.pex.NonPollingBusinessService",
+            "args": "${command:SpecifyProgramArgs}",
+            "projectName": "intersystems-PEX-demo"
+        },
         {
             "type": "java",
             "name": "CodeLens (Launch) - NonPollingBusinessService",
